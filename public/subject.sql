@@ -12,3 +12,6 @@ create table subject
 alter table subject
     owner to postgres;
 
+create index subject_code
+    on subject (subjectcode);
+

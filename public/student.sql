@@ -14,3 +14,6 @@ create table student
 alter table student
     owner to postgres;
 
+create index student_name
+    on student (firstname, lastname);
+

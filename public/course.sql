@@ -10,3 +10,6 @@ create table course
 alter table course
     owner to postgres;
 
+create index course_name
+    on course (coursename);
+

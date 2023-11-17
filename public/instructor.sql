@@ -10,3 +10,6 @@ create table instructor
 alter table instructor
     owner to postgres;
 
+create index teacher_name
+    on instructor (firstname, lastname);
+
