@@ -1,11 +1,11 @@
-create procedure add_student(IN firstname character varying, IN lastname character varying, IN birthdate date, IN admissiondate date, IN courseid integer)
+create procedure add_student(IN newfirstname character varying, IN newlastname character varying, IN newbirthdate date, IN newadmissiondate date, IN newcourseid integer)
     language plpgsql
 as
 $$
 BEGIN
     INSERT INTO student (firstName, lastName, birthDate, admissionDate, courseId)
     VALUES
-    (firstName, lastName, birthDate, admissionDate, courseId);
+    (newfirstName, newlastName, newbirthDate, newadmissionDate, newcourseId);
 
     commit;
 END;$$;

@@ -1,11 +1,11 @@
-create procedure add_subject(IN subjectname character varying, IN creditpoints integer, IN yearcommenced integer, IN subjectcode character varying, IN description character varying)
+create procedure add_subject(IN newsubjectname character varying, IN newcreditpoints integer, IN newyearcommenced integer, IN newsubjectcode character varying, IN newdescription character varying)
     language plpgsql
 as
 $$
 BEGIN
     INSERT INTO subject (subjectName, creditPoints, yearCommenced, subjectCode, description)
     VALUES
-    (subjectName, creditPoints, yearCommenced, subjectCode, description);
+    (newsubjectName, newcreditPoints, newyearCommenced, newsubjectCode, newdescription);
     commit;
 END;$$;
 
