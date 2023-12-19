@@ -1,19 +1,18 @@
 create table "subject-taken"
 (
-    subjecttakenid serial
-        primary key,
-    studentid      integer
-        constraint subject_taken_stud_fk
-            references student,
+    subjecttakenid integer default nextval('"subject-taken_subjecttakenid_seq1"'::regclass) not null
+        constraint "subject-taken_pkey1"
+            primary key,
+    studentid      integer,
     subjectid      integer
         constraint subject_taken_fk
-            references subject,
+            references subjects,
     yearlevelid    integer
         constraint subject_taken_year_fk
-            references year,
+            references years,
     semesterid     integer
         constraint subject_taken_sem_fk
-            references semester,
+            references semesters,
     gradeid        integer
         constraint subject_taken_grade_fk
             references grades

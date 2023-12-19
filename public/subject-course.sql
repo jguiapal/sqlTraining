@@ -4,14 +4,14 @@ create table "subject-course"
         primary key,
     courseid        integer
         constraint subject_course_fk
-            references course,
+            references courses,
     subjects        jsonb,
     yearlevelid     integer
         constraint subject_course_year_fk
-            references year,
+            references years,
     semesterid      integer
         constraint subject_course_sem_fk
-            references semester
+            references semesters
 );
 
 alter table "subject-course"
